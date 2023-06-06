@@ -1,6 +1,8 @@
 require 'date'
 
 class Item
+  attr_reader :id, :genre, :author, :source, :label, :publish_date, :archived
+
   initialize(id, genre, author, source, label, publish_date, archived)
   @id = id
   @genre = genre
@@ -13,15 +15,17 @@ class Item
 end
 
 def can_be_archived?
-  days = @publish_date - DateTime.now
-  years = days / 365
-  return true if years > 10
+    days = (Date.today - @publish_date).to_i
+    years = days / 365
+    years > 10
+  end
 
-  false
-end
-
-def move_to_archive
-  return @archived = true if can_be_archived?
-
-  false
+  def move_to_archive
+    if can_be_archived?
+      @archived = true
+      true
+    else
+      false
+    end
+  end
 end
