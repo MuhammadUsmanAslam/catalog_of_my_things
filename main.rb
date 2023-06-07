@@ -1,3 +1,5 @@
+require_relative 'musicAlbum/music_album_ui'
+
 def run_option
   puts 'Welcome to our App console!'
   puts 'Kindly choose an option'
