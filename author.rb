@@ -14,3 +14,4 @@ class Author
     @item << item
   end
 end
+
