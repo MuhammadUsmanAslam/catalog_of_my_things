@@ -1,3 +1,5 @@
+require_relative './app.rb'
+
 def run_option
   puts 'Welcome to our App console!'
   puts 'Kindly choose an option'
@@ -14,20 +16,27 @@ def run_option
   puts '11-: Exit/Quit'
 end
 
-def handle_option(option) # rubocop:disable Metrics/CyclomaticComplexity
+def add_game(app)
+    puts 'add multiplayer'
+    multiplayer= gets.chomp
+    puts 'add last_played_at '
+    last_played_at= gets.chomp
+end
+
+def handle_option(option, app) # rubocop:disable Metrics/CyclomaticComplexity
   case option
   when 1
     puts 'List all books'
   when 2
     puts 'List all music albums'
-  when 3
-    puts 'List of games'
+   when 3
+    app.list_games
   when 4
-    puts 'List all genres'
+    app.list_authors
   when 5
     puts 'List all labels'
   when 6
-    puts 'List all authors'
+    app.list_authors
   when 7
     puts 'List all sources '
   when 8
@@ -35,7 +44,7 @@ def handle_option(option) # rubocop:disable Metrics/CyclomaticComplexity
   when 9
     puts 'Add a music album'
   when 10
-    puts 'Add a game'
+    add_game(app)
   when 11
     puts 'Thanks You!!...'
     false
@@ -44,10 +53,11 @@ end
 
 def main
   status = true
+  app=App.new
   while status
     run_option
     option = gets.chomp.to_i
-    handle_option(option)
+    handle_option(option, app)
     status = false if option == 11
   end
 end
