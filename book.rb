@@ -18,7 +18,7 @@ class Book < Item
   def can_be_archived?
     days = @publish_date - DateTime.now
     years = days / 365
-    return true if years > 10 && @cover_state == 'bad'
+    return true if years > 10 || @cover_state == 'bad'
 
     false
   end
