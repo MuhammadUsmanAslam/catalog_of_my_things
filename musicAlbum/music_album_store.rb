@@ -4,7 +4,7 @@ class MusicAlbumStore
   attr_reader :music_album_file
 
   def initialize
-    @music_album_file = 'music_album/music_album.json'
+    @music_album_file = 'musicAlbum/music_album.json'
   end
 
   def file_read(filename)
@@ -13,8 +13,11 @@ class MusicAlbumStore
   end
 
   def file_write(filename, data)
-    File.write(filename, JSON.generate(data))
+    File.open(filename, 'w') do |file|
+      file.write(JSON.generate(data))
+    end
   end
+  
 
   def store_music_album(music_album)
     music_albums = []
