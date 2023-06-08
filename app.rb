@@ -22,5 +22,20 @@ class App
         @game << game
       end
 
+      def save_data(file_name)
+        File.open(file_name, 'w') do |file|
+          file.write(JSON.generate(@game))
+        end
+      end
+    
+      def load_data(file_name)
+        if File.exist?(file_name)
+          file_contents = File.read(file_name)
+          @game = JSON.parse(file_contents)
+        else
+          puts "File '#{file_name}' not found."
+        end
+      end
+
 
 end
