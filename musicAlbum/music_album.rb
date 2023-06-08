@@ -8,9 +8,7 @@ class MusicAlbum < Item
     @on_spotify = on_spotify
   end
 
-  def genre=(genre)
-    @genre = genre
-  end
+  attr_writer :genre
 
   private
 
@@ -20,6 +18,3 @@ class MusicAlbum < Item
     false
   end
 end
-
-
-

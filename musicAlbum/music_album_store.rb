@@ -13,11 +13,8 @@ class MusicAlbumStore
   end
 
   def file_write(filename, data)
-    File.open(filename, 'w') do |file|
-      file.write(JSON.generate(data))
-    end
+    File.write(filename, JSON.generate(data))
   end
-  
 
   def store_music_album(music_album)
     music_albums = []
