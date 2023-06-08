@@ -1,8 +1,7 @@
 require 'date'
 
 class Item
-  attr_reader :id, :genre, :author, :source, :publish_date
-  attr_accessor :archived, :label
+  attr_accessor :id, :genre, :author, :source, :label, :publish_date, :archived
 
   def initialize(id, genre, author, source, label, publish_date, archived)
     @id = id
@@ -10,22 +9,23 @@ class Item
     @author = author
     @source = source
     @label = label
-    # publish date formate is YYYY, MM, DD
-    @publish_date = Date.new(publish_date)
+    # publish date format is YYYY, MM, DD
+    @publish_date = Date.new(*publish_date.split(',').map(&:to_i))
     @archived = archived
   end
 
   def can_be_archived?
-    days = @publish_date - DateTime.now
+    days = (Date.today - @publish_date).to_i
     years = days / 365
-    return true if years > 10
-
-    false
+    years > 10
   end
 
   def move_to_archive
-    return @archived = true if can_be_archived?
-
-    false
+    if can_be_archived?
+      @archived = true
+      true
+    else
+      false
+    end
   end
 end
