@@ -2,14 +2,18 @@ require_relative './item.rb'
 require 'date'
 
 class Game < Item
-    attr_reader :last_played_at
+    attr_accessor :multiplayer, :last_played_at
 
-    def initialize(id, genre, author, source, label, publish_date, archived, multiplayer,last_played_at)
-        super(id, genre, author, source, label, publish_date, archived)
-        @multiplayer = multiplayer
-        @last_played_at = Date.parse(last_played_at)
-        @id = id
+    def initialize(id,title, author, genre, label, multiplayer, last_played_at)
+      super(id, genre, author, source, label, publish_date, archived)
+      @multiplayer = multiplayer
+      @last_played_at = last_played_at
+      @id=id
+      @title=title
     end
+    def title
+        @title
+      end
 
     def can_be_archived?
         parents_results = super

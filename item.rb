@@ -9,10 +9,10 @@ class Item
     @author = author
     @source = source
     @label = label
-    # publish date format is YYYY, MM, DD
-    @publish_date = Date.new(*publish_date.split(',').map(&:to_i))
+    @publish_date = Date.new(*publish_date.split(',').map(&:to_i)) unless publish_date.nil?
     @archived = archived
   end
+  
 
   def can_be_archived?
     days = (Date.today - @publish_date).to_i

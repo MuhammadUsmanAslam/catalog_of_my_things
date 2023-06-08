@@ -1,6 +1,6 @@
 require_relative './author.rb'
 require_relative './game.rb'
-require_relative './item.rb'
+require 'json'
 
 class App
     def initialize
@@ -17,9 +17,10 @@ class App
           puts author
         end
       end
-
-      def add_game
+      def add_game(title, author, multiplayer, last_played_at, genre, label, id)
+        game = Game.new(id, genre, author, nil, label, nil, false, multiplayer, last_played_at, title)
         @game << game
+        puts "Game '#{game.title}' added successfully!"
       end
 
       def save_data(file_name)
@@ -27,15 +28,18 @@ class App
           file.write(JSON.generate(@game))
         end
       end
-    
-      def load_data(file_name)
-        if File.exist?(file_name)
-          file_contents = File.read(file_name)
-          @game = JSON.parse(file_contents)
+      
+      def load_data(filename)
+        if File.exist?(filename)
+          json_data = File.read(filename)
+          @game = JSON.parse(json_data)
         else
-          puts "File '#{file_name}' not found."
+          @game = []
+          save_data(filename)
         end
       end
+      
+      
 
 
 end
