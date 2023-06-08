@@ -1,11 +1,11 @@
 require_relative './item'
 
 class Book < Item
-  def initialize(publisher, cover_state, id, genre, author, source, label, publish_date, archived)
+  def initialize(publisher, cover_state, genre, author, source, label, publish_date, archived)
     super(id, genre, author, source, label, publish_date, archived)
     @publisher = publisher
     @cover_state = cover_state
-    @id = id
+    @id = rand(1..1000)
     @genre = genre
     @author = author
     @source = source
