@@ -1,3 +1,5 @@
+require_relative 'musicAlbum/music_album_ui'
+
 def run_option
   puts 'Welcome to our App console!'
   puts 'Kindly choose an option'
@@ -14,16 +16,16 @@ def run_option
   puts '11-: Exit/Quit'
 end
 
-def handle_option(option) # rubocop:disable Metrics/CyclomaticComplexity
+def handle_option(option, music_album_ui) # rubocop:disable Metrics/CyclomaticComplexity
   case option
   when 1
     puts 'List all books'
   when 2
-    puts 'List all music albums'
+    music_album_ui.list_music_album
   when 3
     puts 'List of games'
   when 4
-    puts 'List all genres'
+    music_album_ui.list_genre
   when 5
     puts 'List all labels'
   when 6
@@ -33,7 +35,7 @@ def handle_option(option) # rubocop:disable Metrics/CyclomaticComplexity
   when 8
     puts 'Add a book'
   when 9
-    puts 'Add a music album'
+    music_album_ui.add_music_album
   when 10
     puts 'Add a game'
   when 11
@@ -43,11 +45,12 @@ def handle_option(option) # rubocop:disable Metrics/CyclomaticComplexity
 end
 
 def main
+  music_album_ui = MusicAlbumUI.new
   status = true
   while status
     run_option
     option = gets.chomp.to_i
-    handle_option(option)
+    status = handle_option(option, music_album_ui)
     status = false if option == 11
   end
 end
