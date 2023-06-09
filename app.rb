@@ -1,11 +1,25 @@
+require 'json'
+require 'fileutils'
+require 'pry'
+
+require_relative 'author'
+require_relative 'game'
+require_relative 'game_model'
+require_relative 'save_game'
+require_relative 'load_game'
 require_relative './book'
 require 'JSON'
 
 class App
   def initialize
+    @games = load_game
     @books = []
     @labels = []
   end
+
+  include GameModel
+  include SaveGame
+  include LoadGame
 
   def load_books
     return unless File.exist?('books.json')

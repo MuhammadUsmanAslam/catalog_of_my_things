@@ -1,16 +1,21 @@
-require_relative './item'
-class Author
-  attr_reader :id, :first_name, :last_name, :items
+require_relative 'item'
 
-  def initialize(id, first_name, last_name, items)
-    @id = id
+class Author
+  attr_accessor :first_name, :last_name, :items
+
+  def initialize(first_name, last_name)
+    Random.rand(1..1000)
     @first_name = first_name
     @last_name = last_name
-    @items = items
   end
 
   def add_item(item)
     item.author = self
-    @item << item
+    item << item
   end
+
+  # def add_item(item)
+  #   item.author = self
+  #   @item << item
+  # end
 end
