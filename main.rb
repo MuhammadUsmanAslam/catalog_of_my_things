@@ -1,7 +1,6 @@
 require_relative 'musicAlbum/music_album_ui'
 require_relative './app'
 
-
 def run_option
   puts 'Welcome to our App console!'
   puts 'Kindly choose an option'

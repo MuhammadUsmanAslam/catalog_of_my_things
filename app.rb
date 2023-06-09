@@ -21,7 +21,6 @@ class App
   include SaveGame
   include LoadGame
 
-
   def load_books
     return unless File.exist?('books.json')
 
