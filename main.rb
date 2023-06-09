@@ -1,6 +1,7 @@
 require_relative 'musicAlbum/music_album_ui'
 require_relative './app'
 
+
 def run_option
   puts 'Welcome to our App console!'
   puts 'Kindly choose an option'
@@ -24,7 +25,7 @@ end
 def handle_option(option, music_album_ui, app) # rubocop:disable Metrics/CyclomaticComplexity
   case option
   when 1
-    puts 'List all books'
+    app.list_books
   when 2
     music_album_ui.list_music_album
   when 3
@@ -32,25 +33,28 @@ def handle_option(option, music_album_ui, app) # rubocop:disable Metrics/Cycloma
   when 4
     music_album_ui.list_genre
   when 5
-    puts 'List all labels'
+    app.list_labels
   when 6
     app.list_authors
   when 7
     puts 'List all sources'
   when 8
-    puts 'Add a book'
+    app.add_book
   when 9
     music_album_ui.add_music_album
   when 10
     app.add_game
   when 11
     puts 'Thanks You!!...'
+    app.save_books
     false
   end
 end
 
 def main
   music_album_ui = MusicAlbumUI.new
+  app = App.new
+  app.load_books
   status = true
   app = App.new
   # app.load_data('./game.json')
