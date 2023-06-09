@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 require_relative 'musicAlbum/music_album_ui'
-=======
 require_relative './app.rb'
->>>>>>> 8c90eca (Add options)
 
 def run_option
   puts 'Welcome to our App console!'
@@ -21,7 +18,7 @@ def run_option
 end
 
 def list_authors
-  puts "List of authors:"
+  @author
 end
 
 
