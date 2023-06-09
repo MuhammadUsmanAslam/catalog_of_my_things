@@ -16,7 +16,9 @@ def run_option
   puts '10-:Add a game'
   puts '11-: Exit/Quit'
 end
+
 public
+
 def list_authors
   @author
 end
