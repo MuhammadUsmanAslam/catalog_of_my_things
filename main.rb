@@ -20,28 +20,10 @@ def run_option
   puts '11-: Exit/Quit'
 end
 
-def handle_option(option, music_album_ui) # rubocop:disable Metrics/CyclomaticComplexity
-def add_game(app)
-    puts 'Enter game title:'
-    title = gets.chomp
-    puts 'Enter game author:'
-    author = gets.chomp
-    puts 'Enter multiplayer (true/false):'
-    multiplayer = gets.chomp.downcase == 'true'
-    puts 'Enter last played at:'
-    last_played_at = gets.chomp
-    puts 'genre of game'
-    genre=gets.chomp
-    puts 'label of game'
-    label=gets.chomp
-    puts 'id of player'
-    id=gets.chomp
-    
-    game = Game.new(id,title, author, genre, label, multiplayer, last_played_at)
-    app.add_game(game)
-    
-    puts "Game '#{game.title}' added successfully!"
-  end
+def list_authors
+  puts "List of authors:"
+end
+
 
 def handle_option(option, app) # rubocop:disable Metrics/CyclomaticComplexity
   case option
@@ -57,11 +39,11 @@ def handle_option(option, app) # rubocop:disable Metrics/CyclomaticComplexity
    when 3
     app.list_games
   when 4
-    app.list_authors
+    puts 'list genre'
   when 5
     puts 'List all labels'
   when 6
-    app.list_authors
+    list_authors
   when 7
     puts 'List all sources '
   when 8
@@ -69,7 +51,7 @@ def handle_option(option, app) # rubocop:disable Metrics/CyclomaticComplexity
   when 9
     music_album_ui.add_music_album
   when 10
-    add_game(app)
+    app.add_game
   when 11
     puts 'Thanks You!!...'
     false
@@ -80,7 +62,7 @@ def main
   music_album_ui = MusicAlbumUI.new
   status = true
   app = App.new
-  app.load_data('./game.json') 
+  # app.load_data('./game.json') 
   while status
     run_option
     option = gets.chomp.to_i
