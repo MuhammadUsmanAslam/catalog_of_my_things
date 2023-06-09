@@ -1,18 +1,13 @@
 require_relative './item'
 
 class Book < Item
-  def initialize(publisher, cover_state, id, genre, author, source, label, publish_date, archived)
-    super(id, genre, author, source, label, publish_date, archived)
+  attr_accessor :publisher, :cover_state, :id
+
+  def initialize(publisher, cover_state, _genre, _author, _source, _label, publish_date, _archived)
+    super(publish_date)
     @publisher = publisher
     @cover_state = cover_state
-    @id = id
-    @genre = genre
-    @author = author
-    @source = source
-    @label = label
-    # publish date formate is YYYY, MM, DD
-    @publish_date = Date.new(publish_date)
-    @archived = archived
+    @id = rand(1..1000)
   end
 
   def can_be_archived?
