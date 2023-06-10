@@ -9,13 +9,13 @@ module GameModel
     puts 'Enter first name: '
     first_name = gets.chomp
     puts 'Enter last name: '
-    last_name=gets.chomp
+    last_name = gets.chomp
 
     game = Game.new(multiplayer, last_played_at, publish_date)
     @games << game
     # binding pry
     save_game(@games)
-    author =  Author.new(first_name, last_name)
+    Author.new(first_name, last_name)
 
     puts 'Game  added successfully!'
   end
@@ -40,9 +40,9 @@ module GameModel
     if @games.empty?
       puts 'No games found.'
     else
-    @games.each do |game|
-      puts "Multiplayer: #{game.multiplayer} | Last played: #{game.last_played_at} | Published: #{game.publish_date}"
+      @games.each do |game|
+        puts "Multiplayer: #{game.multiplayer} | Last played: #{game.last_played_at} | Published: #{game.publish_date}"
+      end
     end
   end
-end
 end

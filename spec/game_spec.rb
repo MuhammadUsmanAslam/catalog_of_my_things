@@ -1,6 +1,6 @@
 require 'rspec'
-require_relative './game'
-require_relative './author'
+require_relative '../game'
+require_relative '../author'
 
 RSpec.describe 'Game' do
   describe '#can_be_archived?' do

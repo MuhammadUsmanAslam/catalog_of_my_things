@@ -29,7 +29,7 @@ RSpec.describe Book do
   describe '#can_be_archived?' do
     context 'when the cover state is good and less than 10 years have passed' do
       let(:cover_state) { 'good' }
-      let(:publish_date) { Date.today - 9 * 365 }
+      let(:publish_date) { Date.today - (9 * 365) }
 
       it 'returns false' do
         expect(book.can_be_archived?).to be_falsey
@@ -38,7 +38,7 @@ RSpec.describe Book do
 
     context 'when the cover state is good and more than 10 years have passed' do
       let(:cover_state) { 'good' }
-      let(:publish_date) { Date.today - 11 * 365 }
+      let(:publish_date) { Date.today - (11 * 365) }
 
       it 'returns false' do
         expect(book.can_be_archived?).to be_falsey
