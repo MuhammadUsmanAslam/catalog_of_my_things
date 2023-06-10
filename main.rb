@@ -17,7 +17,6 @@ end
 
 public
 
-
 def handle_option(option, app) # rubocop:disable Metrics/CyclomaticComplexity
   case option
   when 1
