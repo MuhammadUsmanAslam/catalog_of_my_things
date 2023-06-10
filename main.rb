@@ -1,4 +1,3 @@
-require_relative 'musicAlbum/music_album_ui'
 require_relative './app'
 
 def run_option
@@ -20,16 +19,16 @@ end
 public
 
 
-def handle_option(option, music_album_ui, app) # rubocop:disable Metrics/CyclomaticComplexity
+def handle_option(option, app) # rubocop:disable Metrics/CyclomaticComplexity
   case option
   when 1
     app.list_books
   when 2
-    music_album_ui.list_music_album
+    app.list_music_albums
   when 3
     app.list_games
   when 4
-    music_album_ui.list_genre
+    app.list_genres
   when 5
     app.list_labels
   when 6
@@ -39,7 +38,7 @@ def handle_option(option, music_album_ui, app) # rubocop:disable Metrics/Cycloma
   when 8
     app.add_book
   when 9
-    music_album_ui.add_music_album
+    app.add_music_album
   when 10
     app.add_game
   when 11
@@ -50,16 +49,13 @@ def handle_option(option, music_album_ui, app) # rubocop:disable Metrics/Cycloma
 end
 
 def main
-  music_album_ui = MusicAlbumUI.new
   app = App.new
-  app.load_books
   status = true
-  app = App.new
-  # app.load_data('./game.json')
+
   while status
     run_option
     option = gets.chomp.to_i
-    handle_option(option, music_album_ui, app)
+    handle_option(option, app)
     status = false if option == 11
   end
 end
