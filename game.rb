@@ -11,9 +11,14 @@ class Game < Item
     @last_played_at = last_played_at
   end
 
-  private
-
+  # def can_be_archived?
+  #   super && @last_played_at < 2.years.ago
+  # end
   def can_be_archived?
-    super && @last_played_at < 2.years.ago
+    today = Date.today
+    last_played_duration = (today - last_played_at).to_i
+    publish_years_ago = (today.year - publish_date.year)
+  
+    multiplayer && last_played_duration >= 2 && publish_years_ago >= 2
   end
 end
