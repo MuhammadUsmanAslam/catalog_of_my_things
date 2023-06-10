@@ -18,6 +18,7 @@ class App
     @books = []
     @music = MusicAlbumUI.new
     @labels = []
+    @authors = load_author
   end
 
   include GameModel

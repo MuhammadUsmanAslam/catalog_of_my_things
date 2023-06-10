@@ -15,9 +15,11 @@ module GameModel
     @games << game
     # binding pry
     save_game(@games)
-    Author.new(first_name, last_name)
+    author = Author.new(first_name, last_name) 
+    @authors << author
+    save_author(@authors)
 
-    puts 'Game  added successfully!'
+    puts 'Game  and Auhtor added successfully!'
   end
 
   def list_authors
@@ -42,6 +44,18 @@ module GameModel
     else
       @games.each do |game|
         puts "Multiplayer: #{game.multiplayer} | Last played: #{game.last_played_at} | Published: #{game.publish_date}"
+      end
+    end
+  end
+
+  
+  def list_authors
+    load_author
+    if @authors.empty?
+      puts 'No games found.'
+    else
+      @authors.each do |author|
+        puts "First Name: #{author.first_name} | Last Name: #{author.last_name} "
       end
     end
   end
