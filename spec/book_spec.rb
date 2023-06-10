@@ -4,18 +4,16 @@ require_relative '../book'
 RSpec.describe Book do
   let(:publisher) { 'Example Publisher' }
   let(:cover_state) { 'good' }
-  let(:author) { 'John Doe' }
   let(:label) { 'Example Book' }
   let(:publish_date) { Date.new(2020, 1, 1) }
   let(:archived) { false }
 
-  subject(:book) { described_class.new(publisher, cover_state, author, label, publish_date, archived) }
+  subject(:book) { described_class.new(publisher, cover_state, label, publish_date, archived) }
 
   describe '#initialize' do
     it 'sets the attributes correctly' do
       expect(book.publisher).to eq(publisher)
       expect(book.cover_state).to eq(cover_state)
-      expect(book.author).to eq(author)
       expect(book.label).to eq(label)
       expect(book.publish_date).to eq(publish_date)
       expect(book.archived).to eq(archived)
