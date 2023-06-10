@@ -19,9 +19,25 @@ class Item
     end
   end
 
-  def author=(author)
+  def authors=(author)
     @author = author
     author.items.push(self) unless author.items.include(self)
+  end
+
+  def label=(label)
+    @label = label
+    label.items.push(self) unless label.items.include?(self)
+  end
+
+  def genre=(genre)
+    @genre = genre
+    genre.items.push(self) unless genre.items.include?(self)
+  end
+
+  def author=(author)
+    raise ArgumentError, 'Invalid author object' unless author.is_a?(Author)
+
+    @author = author
   end
 
   private

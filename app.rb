@@ -18,6 +18,8 @@ class App
     @books = []
     @music = MusicAlbumUI.new
     @labels = []
+    @author_list = []
+    load_authors
   end
 
   include GameModel
@@ -121,5 +123,27 @@ class App
 
   def add_music_album
     @music.add_music_album
+  end
+
+  def save_authors
+    author_add = []
+    @author_list.each do |author|
+      author_add << {
+        id: author.id,
+        first_name: author.first_name,
+        last_name: author.last_name
+      }
+    end
+
+    File.write('authors.json', JSON.pretty_generate(author_add))
+  end
+
+  def load_authors
+    return unless File.exist?('authors.json')
+
+    authors_data = JSON.parse(File.read('authors.json'))
+    @author_list = authors_data.map do |author_data|
+      Author.new(author_data['first_name'], author_data['last_name'])
+    end
   end
 end

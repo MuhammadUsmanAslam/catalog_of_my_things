@@ -5,7 +5,6 @@ CREATE TABLE movies (
   title VARCHAR(255),
   genre VARCHAR(255),
   author VARCHAR(255),
-  source VARCHAR(255),
   label VARCHAR(255),
   publish_date DATE,
   archived BOOLEAN
@@ -49,7 +48,6 @@ CREATE TABLE games (
   title VARCHAR(255),
   genre VARCHAR(255),
   author VARCHAR(255),
-  source VARCHAR(255),
   label VARCHAR(255),
   publish_date DATE,
   archived BOOLEAN,

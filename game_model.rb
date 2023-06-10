@@ -1,38 +1,40 @@
 module GameModel
   def add_game
-    puts 'Is game multiplayer [Y/N]: '
-    multiplayer = gets.chomp.downcase == 'true'
-    puts 'Enter date of last played(yyyy-mm-dd): '
+    puts 'Is the game multiplayer? [Y/N]: '
+    multiplayer = gets.chomp.downcase == 'y'
+    puts 'Enter date of last played (yyyy-mm-dd): '
     last_played_at = gets.chomp
-    puts 'Enter publish date (yyyy-mm-ddd):'
+    puts 'Enter publish date (yyyy-mm-dd):'
     publish_date = gets.chomp
-    puts 'Enter first name: '
+    puts 'Enter author first name: '
     first_name = gets.chomp
-    puts 'Enter last name: '
+    puts 'Enter author last name: '
     last_name = gets.chomp
 
     game = Game.new(multiplayer, last_played_at, publish_date)
+    @games ||= []
     @games << game
-    # binding pry
     save_game(@games)
-    Author.new(first_name, last_name)
 
-    puts 'Game  added successfully!'
+    author = Author.new(first_name, last_name)
+    author.add_author(game)
+
+    @author_list ||= []
+    @author_list << author
+
+    puts 'Game added successfully!'
   end
 
   def list_authors
-    authors = []
-    @games.each do |game|
-      authors << game.author unless game.author.nil?
-    end
-
-    if authors.empty?
-      puts 'author: kushie tracy'
-    else
-      authors.uniq.each do |author|
-        puts "First_Name: #{author.first_name} | Last_Name: #{author.last_name}"
+    if @author_list && !@author_list.empty?
+      puts "\nAuthor List:\n"
+      @author_list.each do |author|
+        puts "Author name: #{author.name}"
       end
+    else
+      puts "\nThere are no authors in the list\n"
     end
+    puts
   end
 
   def list_games

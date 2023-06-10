@@ -41,6 +41,7 @@ def handle_option(option, app) # rubocop:disable Metrics/CyclomaticComplexity
     puts 'Thanks You!!...'
     app.save_books
     app.save_labels
+    app.save_authors
     false
   end
 end

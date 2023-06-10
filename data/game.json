@@ -23,5 +23,85 @@
     "multiplayer": false,
     "last_played_at": "2001,06,04",
     "publish_date": "1996,10,02"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "2020-12-12",
+    "publish_date": "2020-21-21"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "200-21-21",
+    "publish_date": "223-2"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "2001-21-22",
+    "publish_date": "2020-21-21"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "2020-21-21",
+    "publish_date": "2000-21-21"
+  },
+  {
+    "multiplayer": true,
+    "last_played_at": "2002-12-21",
+    "publish_date": "21-121"
+  },
+  {
+    "multiplayer": true,
+    "last_played_at": "2021-21-2",
+    "publish_date": "2000-21-21"
+  },
+  {
+    "multiplayer": true,
+    "last_played_at": "2021-21-21",
+    "publish_date": "3020-21-21"
+  },
+  {
+    "multiplayer": true,
+    "last_played_at": "2021-21-2",
+    "publish_date": "2012-21-21"
+  },
+  {
+    "multiplayer": true,
+    "last_played_at": "121-221-2121",
+    "publish_date": "1230-42-524-5"
+  },
+  {
+    "multiplayer": true,
+    "last_played_at": "2020-21-21",
+    "publish_date": "2022"
+  },
+  {
+    "multiplayer": true,
+    "last_played_at": "2021-21-21",
+    "publish_date": "2000-21-21"
+  },
+  {
+    "multiplayer": true,
+    "last_played_at": "2021-21-21",
+    "publish_date": "2021-21-21"
+  },
+  {
+    "multiplayer": true,
+    "last_played_at": "181078104",
+    "publish_date": "1701704"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "2020-21-21",
+    "publish_date": "2020-21-21"
+  },
+  {
+    "multiplayer": true,
+    "last_played_at": "13108",
+    "publish_date": "13038"
+  },
+  {
+    "multiplayer": true,
+    "last_played_at": "1810842",
+    "publish_date": "2402840"
   }
 ]

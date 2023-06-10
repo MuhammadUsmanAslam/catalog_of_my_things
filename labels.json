@@ -1,6 +1,6 @@
 [
   {
-    "id": 830,
+    "id": 381,
     "title": "Label 1",
     "color": "green",
     "items": [
@@ -8,7 +8,7 @@
     ]
   },
   {
-    "id": 913,
+    "id": 234,
     "title": "Label 4",
     "color": "Red",
     "items": [
@@ -16,9 +16,17 @@
     ]
   },
   {
-    "id": 930,
+    "id": 892,
     "title": "Label %",
     "color": "Red",
+    "items": [
+
+    ]
+  },
+  {
+    "id": 692,
+    "title": "new",
+    "color": "new",
     "items": [
 
     ]
