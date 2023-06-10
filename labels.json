@@ -1,8 +1,16 @@
 [
   {
-    "id": 573,
-    "title": "lj",
-    "color": "fd",
+    "id": 580,
+    "title": "Label 1",
+    "color": "green",
+    "items": [
+
+    ]
+  },
+  {
+    "id": 605,
+    "title": "Label 4",
+    "color": "Red",
     "items": [
 
     ]

@@ -28,4 +28,3 @@ module LoadGame
     games
   end
 end
-

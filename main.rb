@@ -9,11 +9,10 @@ def run_option
   puts '4-:List all genres '
   puts '5-:List all labels '
   puts '6-:List all authors '
-  puts '7-:List all sources '
-  puts '8-:Add a book'
-  puts '9-:Add a music album'
-  puts '10-:Add a game'
-  puts '11-: Exit/Quit'
+  puts '7-:Add a book'
+  puts '8-:Add a music album'
+  puts '9-:Add a game'
+  puts '10-: Exit/Quit'
 end
 
 public
@@ -34,14 +33,12 @@ def handle_option(option, app) # rubocop:disable Metrics/CyclomaticComplexity
   when 6
     app.list_authors
   when 7
-    puts 'List all sources'
-  when 8
     app.add_book
-  when 9
+  when 8
     app.add_music_album
-  when 10
+  when 9
     app.add_game
-  when 11
+  when 10
     puts 'Thanks You!!...'
     app.save_books
     app.save_labels
@@ -59,7 +56,7 @@ def main
     run_option
     option = gets.chomp.to_i
     handle_option(option, app)
-    status = false if option == 11
+    status = false if option == 10
   end
 end
 

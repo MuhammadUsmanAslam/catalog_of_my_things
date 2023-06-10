@@ -37,7 +37,7 @@ class App
 
   def load_labels
     return unless File.exist?('labels.json')
-    
+
     labels_data = JSON.parse(File.read('labels.json'))
     labels_data.each do |label|
       label_obj = Label.new(label['title'], label['color'])
@@ -87,14 +87,14 @@ class App
     label = gets.chomp.to_s
     puts 'Author:'
     author = gets.chomp.to_s
-    puts 'Publish Date (YYYY, MM, DD):'
+    puts 'Publish Date (YYYY, MM, DD): Note: Date should be in the given format'
     publish_date = gets.chomp
     puts 'Archived(Y/N):'
     archived = gets.chomp.to_s.upcase
     archived = archived == 'Y'
     puts 'Publisher:'
     publisher = gets.chomp.to_s
-    puts 'Color'
+    puts 'Color:'
     color = gets.chomp.to_s
     puts 'Cover State:'
     cover_state = gets.chomp.to_s
