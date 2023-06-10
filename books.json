@@ -1,0 +1,110 @@
+[
+  {
+    "id": 290,
+    "publisher": "P",
+    "cover_state": "Good",
+    "author": "Label",
+    "label": null,
+    "publish_date": "2001,05,06",
+    "archived": true
+  },
+  {
+    "id": 536,
+    "publisher": "Pubs",
+    "cover_state": "Good",
+    "author": "Label 3",
+    "label": null,
+    "publish_date": "2001,05,04",
+    "archived": true
+  },
+  {
+    "id": 286,
+    "publisher": "Pubs",
+    "cover_state": "Good",
+    "author": "Lab",
+    "label": null,
+    "publish_date": "2001,05,03",
+    "archived": true
+  },
+  {
+    "id": 700,
+    "publisher": "Pubs",
+    "cover_state": "Good",
+    "author": "labels",
+    "label": null,
+    "publish_date": "2001,05,06",
+    "archived": true
+  },
+  {
+    "id": 896,
+    "publisher": "p",
+    "cover_state": "gf",
+    "author": "lj",
+    "label": null,
+    "publish_date": "2001,05,04",
+    "archived": true
+  },
+  {
+    "id": 127,
+    "publisher": "Pubs",
+    "cover_state": "Good",
+    "author": "Label 4",
+    "label": null,
+    "publish_date": "2002,05,03",
+    "archived": true
+  },
+  {
+    "id": 703,
+    "publisher": "Pubs",
+    "cover_state": "Good",
+    "author": "Label %",
+    "label": null,
+    "publish_date": "2001,05,06",
+    "archived": true
+  },
+  {
+    "id": 844,
+    "publisher": "fcs",
+    "cover_state": "state",
+    "author": "label",
+    "label": null,
+    "publish_date": "2021,06,12",
+    "archived": true
+  },
+  {
+    "id": 354,
+    "publisher": "",
+    "cover_state": "",
+    "author": "sdad",
+    "label": null,
+    "publish_date": "s",
+    "archived": false
+  },
+  {
+    "id": 681,
+    "publisher": "0200,02,02",
+    "cover_state": "bad",
+    "author": "great",
+    "label": null,
+    "publish_date": "2020/20/20",
+    "archived": true
+  },
+  {
+    "id": 544,
+    "publisher": "1111-11-11",
+    "cover_state": "bad",
+    "author": "Miranja",
+    "label": "sfdas",
+    "publish_date": "1111-111-1-1",
+    "archived": true
+  },
+  {
+    "id": 145,
+    "publisher": "1111-11-11",
+    "cover_state": "bad",
+    "author": "Yushawu",
+    "label": "good",
+    "publish_date": "111-11-11",
+    "archived": true
+  }
+]

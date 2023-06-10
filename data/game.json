@@ -1,0 +1,42 @@
+[
+  {
+    "multiplayer": false,
+    "last_played_at": "ty",
+    "publish_date": "y"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "6",
+    "publish_date": "67"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "2023/03/07",
+    "publish_date": "2012/03/07"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "2003,08,03",
+    "publish_date": "2001,04,08"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "2023-01-01",
+    "publish_date": "2000-01-01"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "2001-01-01",
+    "publish_date": "2000-01-01"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "2022-12-5",
+    "publish_date": "2012-12-05"
+  },
+  {
+    "multiplayer": false,
+    "last_played_at": "",
+    "publish_date": "2000-01-01"
+  }
+]
