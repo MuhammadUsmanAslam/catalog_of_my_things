@@ -29,7 +29,7 @@ class App
 
     books_data = JSON.parse(File.read('books.json'))
     books_data.each do |book|
-      book_obj = Book.new(book['publisher'], book['cover_state'],
+      book_obj = Book.new(book['publisher'], book['cover_state'], book['author_name'],
                           book['label'], book['publish_date'], book['archived'])
       @books.push(book_obj)
     end
@@ -85,8 +85,8 @@ class App
   def add_book
     puts 'Label:'
     label = gets.chomp.to_s
-    # puts 'Author:'
-    # author = gets.chomp.to_s
+    puts 'Author:'
+    author = gets.chomp.to_s
     puts 'Publish Date (YYYY, MM, DD): Note: Date should be in the given format'
     publish_date = gets.chomp
     puts 'Archived(Y/N):'
@@ -94,15 +94,18 @@ class App
     archived = archived == 'Y'
     puts 'Publisher:'
     publisher = gets.chomp.to_s
-    puts 'Color:'
+     puts 'Color:'  
     color = gets.chomp.to_s
     puts 'Cover State:'
     cover_state = gets.chomp.to_s
     puts 'Book added successfully.'
-    book_obj = Book.new(publisher, cover_state, label, publish_date, archived)
+    book_obj = Book.new(publisher, cover_state, label, author, publish_date, archived)
     @books.push(book_obj)
     label_obj = Label.new(label, color)
     @labels.push(label_obj)
+    author = Author.new(author)
+    @authors.push(author)
+    save_author(@authors)
   end
 
   def list_labels

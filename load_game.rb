@@ -21,7 +21,7 @@ module LoadGame
     file = File.open('./data/author.json')
     data = JSON.parse(file.read)
     data.each do |author|
-      authors << Author.new(author['first_name'], author['last_name'])
+      authors << Author.new(author['author_name'])
     end
     file.close
     authors

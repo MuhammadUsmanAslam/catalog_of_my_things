@@ -6,16 +6,15 @@ module GameModel
     last_played_at = gets.chomp
     puts 'Enter publish date (yyyy-mm-dd):'
     publish_date = gets.chomp
-    puts 'Enter author first name: '
-    first_name = gets.chomp
-    puts 'Enter author last name: '
-    last_name = gets.chomp
+    puts 'Enter author author_name: '
+    author_name = gets.chomp
+    
 
     game = Game.new(multiplayer, last_played_at, publish_date)
     @games ||= []
     @games << game
     save_game(@games)
-    author = Author.new(first_name, last_name)
+    author = Author.new(author_name)
     @authors << author
     save_author(@authors)
 
@@ -39,7 +38,7 @@ module GameModel
       puts 'No author found.'
     else
       @authors.each do |author|
-        puts "First Name: #{author.first_name} | Last Name: #{author.last_name} "
+        puts "Author Name: #{author.author_name} "
       end
     end
   end

@@ -1,12 +1,11 @@
 require_relative 'item'
 
 class Author
-  attr_accessor :first_name, :last_name, :items
+  attr_accessor :author_name
 
-  def initialize(first_name, last_name)
+  def initialize(author_name)
     Random.rand(1..1000)
-    @first_name = first_name
-    @last_name = last_name
+    @author_name = author_name
     @items = []
   end
 
