@@ -9,7 +9,6 @@ module GameModel
     puts 'Enter author author_name: '
     author_name = gets.chomp
 
-
     game = Game.new(multiplayer, last_played_at, publish_date)
     @games ||= []
     @games << game
