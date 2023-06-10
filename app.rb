@@ -8,12 +8,15 @@ require_relative 'game_model'
 require_relative 'save_game'
 require_relative 'load_game'
 require_relative './book'
+require_relative './musicAlbum/music_album_ui'
 require 'JSON'
 
 class App
+
   def initialize
     @games = load_game
     @books = []
+    @music = MusicAlbumUI.new
     @labels = []
   end
 
@@ -31,6 +34,8 @@ class App
       @books.push(book_obj)
     end
   end
+  
+  
 
   def list_books
     return unless @books.length.positive?
@@ -56,6 +61,7 @@ class App
 
     File.write('books.json', JSON.pretty_generate(books_to_add))
   end
+  
 
   def add_book
     puts 'Label:'
@@ -84,5 +90,17 @@ class App
     @labels.each do |label|
       puts "[#{label.title}] Title: #{label.title} Color: #{label.color} \n"
     end
+  end
+
+  def list_music_albums
+    @music.list_music_album
+  end
+
+  def list_genres
+    @music.list_genre
+  end
+
+  def add_music_album
+    @music.add_music_album
   end
 end
