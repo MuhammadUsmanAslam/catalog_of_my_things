@@ -1,17 +1,18 @@
 module GameModel
   def add_game
-    puts 'Is game multiplayer [Y/N]: '
-    multiplayer = gets.chomp.downcase == 'true'
-    puts 'Enter date of last played(yyyy-mm-dd): '
+    puts 'Is the game multiplayer? [Y/N]: '
+    multiplayer = gets.chomp.downcase == 'y'
+    puts 'Enter date of last played (yyyy-mm-dd): '
     last_played_at = gets.chomp
-    puts 'Enter publish date (yyyy-mm-ddd):'
+    puts 'Enter publish date (yyyy-mm-dd):'
     publish_date = gets.chomp
-    puts 'Enter first name: '
+    puts 'Enter author first name: '
     first_name = gets.chomp
-    puts 'Enter last name: '
+    puts 'Enter author last name: '
     last_name = gets.chomp
 
     game = Game.new(multiplayer, last_played_at, publish_date)
+    @games ||= []
     @games << game
     save_game(@games)
     author = Author.new(first_name, last_name)

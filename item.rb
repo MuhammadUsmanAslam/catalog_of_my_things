@@ -19,7 +19,7 @@ class Item
     end
   end
 
-  def author=(author)
+  def authors=(author)
     @author = author
     author.items.push(self) unless author.items.include(self)
   end

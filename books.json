@@ -1,29 +1,38 @@
 [
   {
-    "id": 64,
-    "publisher": "",
-    "cover_state": "",
-    "author": null,
-    "label": "sdad",
-    "publish_date": "s",
-    "archived": false
-  },
-  {
-    "id": 754,
-    "publisher": "mark",
+    "id": 350,
+    "publisher": "tyy",
     "cover_state": "state",
     "author": null,
     "label": "label",
-    "publish_date": "2019,03,15",
+    "publish_date": "2023,02,02",
     "archived": true
   },
   {
-    "id": 210,
-    "publisher": "yy",
-    "cover_state": "state",
+    "id": 700,
+    "publisher": "",
+    "cover_state": "",
     "author": null,
-    "label": "cruisy",
-    "publish_date": "2013,04,31",
+    "label": "",
+    "publish_date": "",
+    "archived": false
+  },
+  {
+    "id": 494,
+    "publisher": "",
+    "cover_state": "",
+    "author": null,
+    "label": "",
+    "publish_date": "",
+    "archived": false
+  },
+  {
+    "id": 880,
+    "publisher": "gh",
+    "cover_state": "cover",
+    "author": null,
+    "label": "label",
+    "publish_date": "2017,03,12",
     "archived": true
   }
 ]
