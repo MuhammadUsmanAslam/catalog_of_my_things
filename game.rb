@@ -18,7 +18,7 @@ class Game < Item
     today = Date.today
     last_played_duration = (today - last_played_at).to_i
     publish_years_ago = (today.year - publish_date.year)
-  
+
     multiplayer && last_played_duration >= 2 && publish_years_ago >= 2
   end
 end

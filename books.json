@@ -1,6 +1,6 @@
 [
   {
-    "id": 837,
+    "id": 639,
     "publisher": "P",
     "cover_state": "Good",
     "author": "Author",
@@ -9,7 +9,7 @@
     "archived": true
   },
   {
-    "id": 291,
+    "id": 856,
     "publisher": "Pubs",
     "cover_state": "Good",
     "author": "Author 3",
@@ -18,7 +18,7 @@
     "archived": true
   },
   {
-    "id": 735,
+    "id": 154,
     "publisher": "Pubs",
     "cover_state": "Good",
     "author": "Auth",
@@ -27,7 +27,7 @@
     "archived": true
   },
   {
-    "id": 919,
+    "id": 411,
     "publisher": "Pubs",
     "cover_state": "Good",
     "author": "Authors",
@@ -36,7 +36,7 @@
     "archived": true
   },
   {
-    "id": 792,
+    "id": 942,
     "publisher": "p",
     "cover_state": "gf",
     "author": "a",
@@ -45,12 +45,21 @@
     "archived": true
   },
   {
-    "id": 649,
+    "id": 432,
     "publisher": "Pubs",
     "cover_state": "Good",
     "author": "Author 4",
     "label": "Label 4",
     "publish_date": "2002,05,03",
+    "archived": true
+  },
+  {
+    "id": 222,
+    "publisher": "Pubs",
+    "cover_state": "Good",
+    "author": "Author 5",
+    "label": "Label %",
+    "publish_date": "2001,05,06",
     "archived": true
   }
 ]

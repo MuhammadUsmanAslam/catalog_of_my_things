@@ -18,15 +18,22 @@ CREATE TABLE sources (
 )
 -- Create the books table by using the following schema
 
-CREATE TABLE books (
-  id INT PRIMARY KEY,
-  genre VARCHAR(255),
-  author VARCHAR(255),
-  source VARCHAR(255),
-  label_id INT,
-  publish_date DATE,
-  archived BOOLEAN,
-  FOREIGN KEY (label_id) REFERENCES labels(id)
+CREATE TABLE IF NOT EXISTS books (
+  id SERIAL PRIMARY KEY,
+  publisher VARCHAR(255) NOT NULL,
+  cover_state VARCHAR(255) NOT NULL,
+  publish_date DATE NOT NULL,
+  archived BOOLEAN NOT NULL DEFAULT FALSE,
+  genre_id INT REFERENCES genre(id),
+  label_id INT REFERENCES label(id),
+  author_id INT REFERENCES author(id)
+);
+
+-- Genere Table
+CREATE TABLE IF NOT EXISTS genre (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  items JSONB[]
 );
 
 -- Create the labels table by using the following schema
