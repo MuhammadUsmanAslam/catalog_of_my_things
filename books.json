@@ -1,11 +1,47 @@
 [
   {
-    "id": 294,
-    "publisher": "Pubs",
+    "id": 712,
+    "publisher": "P",
     "cover_state": "Good",
     "author": "Author",
-    "label": "LBEL",
-    "publish_date": "2001,02,01",
+    "label": "Label",
+    "publish_date": "2001,05,06",
+    "archived": true
+  },
+  {
+    "id": 367,
+    "publisher": "Pubs",
+    "cover_state": "Good",
+    "author": "Author 3",
+    "label": "Label 3",
+    "publish_date": "2001,05,04",
+    "archived": true
+  },
+  {
+    "id": 258,
+    "publisher": "Pubs",
+    "cover_state": "Good",
+    "author": "Auth",
+    "label": "Lab",
+    "publish_date": "2001,05,03",
+    "archived": true
+  },
+  {
+    "id": 128,
+    "publisher": "Pubs",
+    "cover_state": "Good",
+    "author": "Authors",
+    "label": "labels",
+    "publish_date": "2001,05,06",
+    "archived": true
+  },
+  {
+    "id": 977,
+    "publisher": "p",
+    "cover_state": "gf",
+    "author": "a",
+    "label": "lj",
+    "publish_date": "2001,05,04",
     "archived": true
   }
 ]

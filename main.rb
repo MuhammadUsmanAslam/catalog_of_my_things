@@ -44,6 +44,7 @@ def handle_option(option, app) # rubocop:disable Metrics/CyclomaticComplexity
   when 11
     puts 'Thanks You!!...'
     app.save_books
+    app.save_labels
     false
   end
 end
@@ -51,6 +52,7 @@ end
 def main
   app = App.new
   app.load_books
+  app.load_labels
   status = true
 
   while status
