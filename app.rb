@@ -1,6 +1,5 @@
 require 'json'
 require 'fileutils'
-require 'pry'
 
 require_relative 'author'
 require_relative 'game'
@@ -30,7 +29,7 @@ class App
 
     books_data = JSON.parse(File.read('books.json'))
     books_data.each do |book|
-      book_obj = Book.new(book['publisher'], book['cover_state'], book['author'],
+      book_obj = Book.new(book['publisher'], book['cover_state'],
                           book['label'], book['publish_date'], book['archived'])
       @books.push(book_obj)
     end
@@ -49,7 +48,7 @@ class App
   def list_books
     return unless @books.length.positive?
 
-    @books.each { |book| puts "Label: #{book.label} Author: #{book.author} Publish Date: #{book.publish_date}\n" }
+    @books.each { |book| puts "Label: #{book.label} Publish Date: #{book.publish_date}\n" }
   end
 
   def save_books
@@ -86,8 +85,8 @@ class App
   def add_book
     puts 'Label:'
     label = gets.chomp.to_s
-    puts 'Author:'
-    author = gets.chomp.to_s
+    # puts 'Author:'
+    # author = gets.chomp.to_s
     puts 'Publish Date (YYYY, MM, DD): Note: Date should be in the given format'
     publish_date = gets.chomp
     puts 'Archived(Y/N):'
@@ -100,7 +99,7 @@ class App
     puts 'Cover State:'
     cover_state = gets.chomp.to_s
     puts 'Book added successfully.'
-    book_obj = Book.new(publisher, cover_state, author, label, publish_date, archived)
+    book_obj = Book.new(publisher, cover_state, label, publish_date, archived)
     @books.push(book_obj)
     label_obj = Label.new(label, color)
     @labels.push(label_obj)

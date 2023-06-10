@@ -1,65 +1,29 @@
 [
   {
-    "id": 1000,
-    "publisher": "P",
-    "cover_state": "Good",
-    "author": "Author",
-    "label": "Label",
-    "publish_date": "2001,05,06",
+    "id": 64,
+    "publisher": "",
+    "cover_state": "",
+    "author": null,
+    "label": "sdad",
+    "publish_date": "s",
+    "archived": false
+  },
+  {
+    "id": 754,
+    "publisher": "mark",
+    "cover_state": "state",
+    "author": null,
+    "label": "label",
+    "publish_date": "2019,03,15",
     "archived": true
   },
   {
-    "id": 730,
-    "publisher": "Pubs",
-    "cover_state": "Good",
-    "author": "Author 3",
-    "label": "Label 3",
-    "publish_date": "2001,05,04",
-    "archived": true
-  },
-  {
-    "id": 163,
-    "publisher": "Pubs",
-    "cover_state": "Good",
-    "author": "Auth",
-    "label": "Lab",
-    "publish_date": "2001,05,03",
-    "archived": true
-  },
-  {
-    "id": 31,
-    "publisher": "Pubs",
-    "cover_state": "Good",
-    "author": "Authors",
-    "label": "labels",
-    "publish_date": "2001,05,06",
-    "archived": true
-  },
-  {
-    "id": 94,
-    "publisher": "p",
-    "cover_state": "gf",
-    "author": "a",
-    "label": "lj",
-    "publish_date": "2001,05,04",
-    "archived": true
-  },
-  {
-    "id": 775,
-    "publisher": "Pubs",
-    "cover_state": "Good",
-    "author": "Author 4",
-    "label": "Label 4",
-    "publish_date": "2002,05,03",
-    "archived": true
-  },
-  {
-    "id": 669,
-    "publisher": "Pubs",
-    "cover_state": "Good",
-    "author": "Author 5",
-    "label": "Label %",
-    "publish_date": "2001,05,06",
+    "id": 210,
+    "publisher": "yy",
+    "cover_state": "state",
+    "author": null,
+    "label": "cruisy",
+    "publish_date": "2013,04,31",
     "archived": true
   }
 ]

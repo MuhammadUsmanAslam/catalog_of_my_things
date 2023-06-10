@@ -13,28 +13,12 @@ module GameModel
 
     game = Game.new(multiplayer, last_played_at, publish_date)
     @games << game
-    # binding pry
     save_game(@games)
-    author = Author.new(first_name, last_name) 
+    author = Author.new(first_name, last_name)
     @authors << author
     save_author(@authors)
 
     puts 'Game  and Auhtor added successfully!'
-  end
-
-  def list_authors
-    authors = []
-    @games.each do |game|
-      authors << game.author unless game.author.nil?
-    end
-
-    if authors.empty?
-      puts 'author: kushie tracy'
-    else
-      authors.uniq.each do |author|
-        puts "First_Name: #{author.first_name} | Last_Name: #{author.last_name}"
-      end
-    end
   end
 
   def list_games
@@ -48,11 +32,10 @@ module GameModel
     end
   end
 
-  
   def list_authors
     load_author
     if @authors.empty?
-      puts 'No games found.'
+      puts 'No author found.'
     else
       @authors.each do |author|
         puts "First Name: #{author.first_name} | Last Name: #{author.last_name} "
