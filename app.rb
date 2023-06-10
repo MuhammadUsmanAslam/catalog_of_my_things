@@ -12,7 +12,6 @@ require_relative './musicAlbum/music_album_ui'
 require 'JSON'
 
 class App
-
   def initialize
     @games = load_game
     @books = []
@@ -29,18 +28,16 @@ class App
 
     books_data = JSON.parse(File.read('books.json'))
     books_data.each do |book|
-      book_obj = Book.new(book['publisher'], book['cover_state'], book['genre'], book['author'], book['source'],
+      book_obj = Book.new(book['publisher'], book['cover_state'], book['author'],
                           book['label'], book['publish_date'], book['archived'])
       @books.push(book_obj)
     end
   end
-  
-  
 
   def list_books
     return unless @books.length.positive?
 
-    @books.each { |book| puts "Label: #{book.label} Author: #{book.author} Genre: #{book.genre}\n" }
+    @books.each { |book| puts "Label: #{book.label} Author: #{book.author} Publish Date: #{book.publish_date}\n" }
   end
 
   def save_books
@@ -50,9 +47,7 @@ class App
         id: book.id,
         publisher: book.publisher,
         cover_state: book.cover_state,
-        genre: book.genre,
         author: book.author,
-        source: book.source,
         label: book.label,
         publish_date: book.publish_date,
         archived: book.archived
@@ -61,7 +56,6 @@ class App
 
     File.write('books.json', JSON.pretty_generate(books_to_add))
   end
-  
 
   def add_book
     puts 'Label:'
@@ -70,8 +64,6 @@ class App
     author = gets.chomp.to_s
     puts 'Publish Date (YYYY, MM, DD):'
     publish_date = gets.chomp
-    puts 'Source:'
-    source = gets.chomp.to_s
     puts 'Archived(Y/N):'
     archived = gets.chomp.to_s.upcase
     archived = archived == 'Y'
@@ -79,10 +71,8 @@ class App
     publisher = gets.chomp.to_s
     puts 'Cover State:'
     cover_state = gets.chomp.to_s
-    puts 'Genre:'
-    genre = gets.chomp.to_s
     puts 'Book added successfully.'
-    book_obj = Book.new(publisher, cover_state, genre, author, source, label, publish_date, archived)
+    book_obj = Book.new(publisher, cover_state, author, label, publish_date, archived)
     @books.push(book_obj)
   end
 
