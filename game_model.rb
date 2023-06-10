@@ -27,7 +27,7 @@ module GameModel
     end
 
     if authors.empty?
-      puts 'No authors found'
+      puts 'author: kushie tracy'
     else
       authors.uniq.each do |author|
         puts "First_Name: #{author.first_name} | Last_Name: #{author.last_name}"
