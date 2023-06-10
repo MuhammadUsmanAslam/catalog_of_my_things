@@ -9,7 +9,13 @@ describe MusicAlbum do
     expect(@music_album).to be_instance_of MusicAlbum
   end
 
-  it 'Test for can be archive method' do
-    expect(@music_album.send('can_be_archived?')).to be false
+  it 'Test for on_spotify attribute' do
+    expect(@music_album.on_spotify).to be true
+  end
+
+  it 'Test for genre attribute' do
+    expect(@music_album.genre).to be_nil
+    @music_album.genre = 'Rock'
+    expect(@music_album.genre).to eq('Rock')
   end
 end
