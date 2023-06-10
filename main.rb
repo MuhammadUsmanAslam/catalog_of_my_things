@@ -53,6 +53,7 @@ end
 
 def main
   app = App.new
+  app.load_books
   status = true
 
   while status

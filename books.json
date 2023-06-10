@@ -1,3 +1,11 @@
 [
-
+  {
+    "id": 294,
+    "publisher": "Pubs",
+    "cover_state": "Good",
+    "author": "Author",
+    "label": "LBEL",
+    "publish_date": "2001,02,01",
+    "archived": true
+  }
 ]
