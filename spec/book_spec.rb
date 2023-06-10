@@ -5,7 +5,7 @@ RSpec.describe Book do
   let(:publisher) { 'Example Publisher' }
   let(:cover_state) { 'good' }
   let(:author) { 'John Doe' }
-  let(:label) { 'Example Book' }
+  let(:label) { 'John Doe' }
   let(:publish_date) { Date.new(2020, 1, 1) }
   let(:archived) { false }
 
