@@ -19,9 +19,6 @@ end
 
 public
 
-def list_authors
-  @author
-end
 
 def handle_option(option, music_album_ui, app) # rubocop:disable Metrics/CyclomaticComplexity
   case option
