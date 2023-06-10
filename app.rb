@@ -94,7 +94,7 @@ class App
     archived = archived == 'Y'
     puts 'Publisher:'
     publisher = gets.chomp.to_s
-     puts 'Color:'  
+    puts 'Color:'
     color = gets.chomp.to_s
     puts 'Cover State:'
     cover_state = gets.chomp.to_s

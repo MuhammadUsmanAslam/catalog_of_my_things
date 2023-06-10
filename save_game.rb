@@ -24,7 +24,7 @@ module SaveGame
     author_arr = []
     authors.each do |author|
       author_arr << {
-        author_name: author.author_name,
+        author_name: author.author_name
       }
     end
     return if author_arr.empty?
