@@ -8,6 +8,7 @@ require_relative 'game_model'
 require_relative 'save_game'
 require_relative 'load_game'
 require_relative './book'
+require_relative './label'
 require_relative './musicAlbum/music_album_ui'
 require 'JSON'
 
@@ -34,6 +35,16 @@ class App
     end
   end
 
+  def load_labels
+    return unless File.exist?('labels.json')
+    
+    labels_data = JSON.parse(File.read('labels.json'))
+    labels_data.each do |label|
+      label_obj = Label.new(label['title'], label['color'])
+      @labels.push(label_obj)
+    end
+  end
+
   def list_books
     return unless @books.length.positive?
 
@@ -57,6 +68,20 @@ class App
     File.write('books.json', JSON.pretty_generate(books_to_add))
   end
 
+  def save_labels
+    labels_to_add = []
+    @labels.each do |label|
+      labels_to_add << {
+        id: label.id,
+        title: label.title,
+        color: label.color,
+        items: label.items
+      }
+    end
+
+    File.write('labels.json', JSON.pretty_generate(labels_to_add))
+  end
+
   def add_book
     puts 'Label:'
     label = gets.chomp.to_s
@@ -69,11 +94,15 @@ class App
     archived = archived == 'Y'
     puts 'Publisher:'
     publisher = gets.chomp.to_s
+    puts 'Color'
+    color = gets.chomp.to_s
     puts 'Cover State:'
     cover_state = gets.chomp.to_s
     puts 'Book added successfully.'
     book_obj = Book.new(publisher, cover_state, author, label, publish_date, archived)
     @books.push(book_obj)
+    label_obj = Label.new(label, color)
+    @labels.push(label_obj)
   end
 
   def list_labels
